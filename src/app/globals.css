@@ -1868,42 +1868,6 @@ nav ul li a:hover {
   border-radius: 50%;
 }
 
-.decor-dots {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  position: absolute;
-  top: 60px;
-  left: 60px;
-}
-
-.dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  transition: all 0.3s ease;
-}
-
-.dot-1 {
-  background: #000;
-}
-
-.dot-2 {
-  background: #ff8b7e;
-  width: 14px;
-  height: 14px;
-  transform: translateX(30px);
-  opacity: 0.8;
-}
-
-.dot-3 {
-  background: #ff8b7e;
-  width: 9px;
-  height: 9px;
-  transform: translateX(60px);
-  opacity: 0.4;
-}
-
 .contact-sub {
   font-size: 1.4rem;
   color: #6b7280;
@@ -1958,10 +1922,10 @@ nav ul li a:hover {
 }
 
 .drop-message {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   color: #ff8b7e;
   margin-bottom: 2.2rem;
-  margin-top: -1.5rem;
+  margin-top: -2rem;
   font-family: var(--font-script);
 }
 
@@ -2070,3 +2034,5 @@ nav ul li a:hover {
     margin: 1rem auto 0;
   }
 }
+
+

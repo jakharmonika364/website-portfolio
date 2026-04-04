@@ -2,14 +2,14 @@
 
 import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
-import { 
-  Code2, 
-  Globe, 
-  Database, 
-  Terminal, 
-  Layers, 
-  Layout, 
-  Server, 
+import {
+  Code2,
+  Globe,
+  Database,
+  Terminal,
+  Layers,
+  Layout,
+  Server,
   ShieldCheck,
   BarChart3,
   Search,
@@ -18,16 +18,16 @@ import {
 } from 'lucide-react';
 
 // Project Card Component with Custom Floating Cursor
-function ProjectCard({ 
-  img, 
-  category, 
-  title, 
-  company, 
-  year, 
-  devices, 
-  desc, 
-  part, 
-  impact, 
+function ProjectCard({
+  img,
+  category,
+  title,
+  company,
+  year,
+  devices,
+  desc,
+  part,
+  impact,
   shipped = false,
   bgColorClass = ""
 }: any) {
@@ -46,8 +46,8 @@ function ProjectCard({
   };
 
   return (
-    <div 
-      className="project-item-card" 
+    <div
+      className="project-item-card"
       ref={cardRef}
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
@@ -55,7 +55,7 @@ function ProjectCard({
     >
       <div className={`item-image-wrapper ${bgColorClass}`}>
         {/* Floating Custom Cursor Pill */}
-        <div 
+        <div
           className="view-case-study"
           style={{
             position: 'absolute',
@@ -71,12 +71,12 @@ function ProjectCard({
         </div>
 
         {shipped && <div className="shipped-badge">Shipped</div>}
-        
-        <Image 
-          src={img} 
-          alt={title} 
+
+        <Image
+          src={img}
+          alt={title}
           width={700}
-          height={400} 
+          height={400}
           className="item-img"
         />
       </div>
@@ -88,7 +88,7 @@ function ProjectCard({
         </div>
         <p className="item-category">{category}</p>
         <h3 className="item-title">{title}</h3>
-        
+
         <div className="hover-details">
           <p className="hover-desc">{desc}</p>
           <div className="hover-grid">
@@ -131,7 +131,7 @@ export default function Home() {
       <section className="container hero">
         <div className="hero-text">
           <div className="badge">Communication Designer</div>
-          
+
           <h1 className="hero-title">
             <span className="name-first">
               {"MONIKA".split("").map((l, i) => (
@@ -189,15 +189,15 @@ export default function Home() {
           </svg>
 
           <div className="handwritten note-top" style={{ top: '-20px', left: '20px', width: '220px' }}>
-            colors were my very first love —<br/> long before I had a name for it 🎨
+            colors were my very first love —<br /> long before I had a name for it 🎨
           </div>
-          
+
           <div className="polaroid polaroid-1">
-            <Image 
-              src="/polaroid1.png" 
-              alt="Where it all began" 
-              width={240} 
-              height={240} 
+            <Image
+              src="/polaroid1.png"
+              alt="Where it all began"
+              width={240}
+              height={240}
             />
             <div className="handwritten note-bottom">
               where it all began
@@ -205,11 +205,11 @@ export default function Home() {
           </div>
 
           <div className="polaroid polaroid-2">
-            <Image 
-              src="/polaroid2.png" 
-              alt="Still that same curiosity" 
-              width={340} 
-              height={340} 
+            <Image
+              src="/polaroid2.png"
+              alt="Still that same curiosity"
+              width={340}
+              height={340}
             />
             <div className="handwritten note-bottom">
               still that same curiosity
@@ -234,7 +234,7 @@ export default function Home() {
 
       <section className="arsenal-section">
         <h2 className="arsenal-title">TECHNICAL <span className="serif">ARSENAL</span></h2>
-        
+
         <div className="arsenal-grid">
           {/* Languages */}
           <div className="arsenal-box">
@@ -337,7 +337,7 @@ export default function Home() {
           </h2>
           <p className="section-subtitle">hover the folder to see what&apos;s inside</p>
         </div>
-        
+
         <div className="folders-grid">
           {/* Projects Folder */}
           <div className="folder-container">
@@ -347,7 +347,7 @@ export default function Home() {
                 <span className="folder-count">● 4 WORKS</span>
                 <span className="folder-years">2023 — 2025</span>
               </div>
-              
+
               <div className="cards-stack">
                 <div className="stack-card card-4 pink-card">
                   <div className="card-label">UI/UX • DESIGN SYSTEM</div>
@@ -359,7 +359,7 @@ export default function Home() {
                 </div>
                 <div className="stack-card card-3 teal-card">
                   <div className="card-label">CAMPAIGN • MARKETING</div>
-                  <h3 className="card-title">Every Girl, A<br/>Bright Future</h3>
+                  <h3 className="card-title">Every Girl, A<br />Bright Future</h3>
                   <div className="card-footer">
                     <span className="card-year">2025</span>
                     <span className="card-number">03</span>
@@ -375,7 +375,7 @@ export default function Home() {
                 </div>
                 <div className="stack-card card-1 main-peach">
                   <div className="card-label">VISUAL DESIGN • PRINT</div>
-                  <h3 className="card-title">Beyond The<br/>Letter</h3>
+                  <h3 className="card-title">Beyond The<br />Letter</h3>
                   <div className="card-footer">
                     <span className="card-year">2025</span>
                     <span className="card-number">01</span>
@@ -397,11 +397,11 @@ export default function Home() {
                 <span className="folder-count">● 3 ROLES</span>
                 <span className="folder-years">2021 — 2024</span>
               </div>
-              
+
               <div className="cards-stack">
                 <div className="stack-card card-3 indigo-card">
                   <div className="card-label">PROJECT MANAGEMENT • TOOLS</div>
-                  <h3 className="card-title">Miro<br/>Boards</h3>
+                  <h3 className="card-title">Miro<br />Boards</h3>
                   <div className="card-footer">
                     <span className="card-year">2021</span>
                     <span className="card-number">03</span>
@@ -409,7 +409,7 @@ export default function Home() {
                 </div>
                 <div className="stack-card card-2 purple-card">
                   <div className="card-label">CONTENT DESIGN • SOCIAL</div>
-                  <h3 className="card-title">Marketing<br/>Assets</h3>
+                  <h3 className="card-title">Marketing<br />Assets</h3>
                   <div className="card-footer">
                     <span className="card-year">2023</span>
                     <span className="card-number">02</span>
@@ -417,7 +417,7 @@ export default function Home() {
                 </div>
                 <div className="stack-card card-1 main-orange">
                   <div className="card-label">VISUAL DESIGN • INTERN</div>
-                  <h3 className="card-title">Suroskie<br/>Beauty</h3>
+                  <h3 className="card-title">Suroskie<br />Beauty</h3>
                   <div className="card-footer">
                     <span className="card-year">2024</span>
                     <span className="card-number">01</span>
@@ -436,7 +436,7 @@ export default function Home() {
 
       <section className="highlights-section container">
         <div className="project-highlight-grid">
-          <ProjectCard 
+          <ProjectCard
             img="/way_com_ux_showcase_1775204723472.png"
             company="Way.com"
             year="2024"
@@ -449,7 +449,7 @@ export default function Home() {
             shipped={false}
             bgColorClass="way-bg"
           />
-          <ProjectCard 
+          <ProjectCard
             img="/cashback_ux_showcase_1775204750677.png"
             company="Way.com"
             year="2024"
@@ -469,7 +469,7 @@ export default function Home() {
         <h2 className="section-title text-center">
           Some kind <span className="serif">words</span> <span className="star">✦</span>
         </h2>
-        
+
         <div className="testimonials-grid">
           <div className="testimonial-card rotate-neg">
             <div className="paper-clip"></div>
@@ -521,22 +521,22 @@ export default function Home() {
               <h2 className="notebook-title">Namaste! I&apos;m Monika ✦</h2>
               <div className="notebook-text">
                 <p>
-                  I&apos;m a <strong>Communication Designer</strong> and User Experience graduate student 
-                  at <strong>Arizona State University</strong>. I love exploring how design can tell 
+                  I&apos;m a <strong>Communication Designer</strong> and User Experience graduate student
+                  at <strong>Arizona State University</strong>. I love exploring how design can tell
                   stories, spark emotion, and make everyday moments a little more meaningful.
                 </p>
                 <p>
-                  With a background in visual communication and user experience, I&apos;ve 
-                  worked on <strong>brand identities, social media campaigns, and digital 
-                  experiences</strong> for a variety of projects.
+                  With a background in visual communication and user experience, I&apos;ve
+                  worked on <strong>brand identities, social media campaigns, and digital
+                    experiences</strong> for a variety of projects.
                 </p>
                 <p>
-                  My journey started with a love for <strong>painting and sketching</strong>, and that 
-                  curiosity still drives how I approach design today — with creativity, 
+                  My journey started with a love for <strong>painting and sketching</strong>, and that
+                  curiosity still drives how I approach design today — with creativity,
                   empathy, and a genuine interest in people and their experiences.
                 </p>
                 <p>
-                  Currently open to <strong>internships & Co-op</strong>. If you&apos;re building something 
+                  Currently open to <strong>internships & Co-op</strong>. If you&apos;re building something
                   with heart, let&apos;s talk!
                 </p>
               </div>
@@ -584,10 +584,10 @@ export default function Home() {
             <div className="pinned-main">
               <div className="push-pin"></div>
               <div className="polaroid-about main-frame">
-                <Image 
-                  src="/workspace.png" 
-                  alt="Workspace" 
-                  className="about-img" 
+                <Image
+                  src="/workspace.png"
+                  alt="Workspace"
+                  className="about-img"
                   width={400}
                   height={300}
                 />
@@ -603,16 +603,11 @@ export default function Home() {
           <div className="contact-left">
             <div className="contact-decoration">
               <div className="decor-blob"></div>
-              <div className="decor-dots">
-                <span className="dot dot-1"></span>
-                <span className="dot dot-2"></span>
-                <span className="dot dot-3"></span>
-              </div>
             </div>
-            
-            <p className="handwritten contact-sub">
+
+            {/* <p className="handwritten contact-sub">
               got a project in mind? let&apos;s make it happen ✨
-            </p>
+            </p> */}
             <h2 className="contact-title">Let&apos;s Talk <span className="arrow">→</span></h2>
             <a href="mailto:monikajakhar@gmail.com" className="contact-email">
               monikajakhar@gmail.com
@@ -622,7 +617,7 @@ export default function Home() {
           <div className="contact-right">
             <div className="contact-card">
               <p className="handwritten drop-message">drop me a message ✨</p>
-              
+
               <form className="contact-form">
                 <div className="form-group">
                   <input type="text" placeholder="Your name" className="form-input" />
@@ -630,7 +625,7 @@ export default function Home() {
                 <div className="form-group">
                   <textarea placeholder="What's on your mind?" className="form-textarea"></textarea>
                 </div>
-                
+
                 <button type="submit" className="submit-btn" onClick={(e) => e.preventDefault()}>
                   Send Message ✦
                 </button>
