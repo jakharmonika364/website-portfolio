@@ -1868,13 +1868,7 @@ nav ul li a:hover {
   border-radius: 50%;
 }
 
-.contact-sub {
-  font-size: 1.4rem;
-  color: #6b7280;
-  margin-bottom: 2rem;
-  font-family: var(--font-script);
-  transform: rotate(-1deg);
-}
+
 
 .contact-title {
   font-size: 8.5rem;

@@ -605,9 +605,6 @@ export default function Home() {
               <div className="decor-blob"></div>
             </div>
 
-            <p className="handwritten contact-sub">
-              got a project in mind? let&apos;s make it happen ✨
-            </p>
             <h2 className="contact-title">Let&apos;s Talk <span className="arrow">→</span></h2>
             <a href="mailto:monikajakhar@gmail.com" className="contact-email">
               monikajakhar@gmail.com
