@@ -961,14 +961,7 @@ nav ul li a:hover {
   font-size: 4rem;
 }
 
-.section-subtitle {
-  font-family: var(--font-script);
-  position: absolute;
-  left: 45%;
-  font-size: 1.4rem;
-  color: #9ca3af;
-  margin-top: 0;
-}
+
 
 .folders-grid {
   display: flex;

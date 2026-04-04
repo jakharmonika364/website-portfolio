@@ -233,7 +233,7 @@ export default function Home() {
       </section>
 
       <section className="arsenal-section">
-        <h2 className="arsenal-title">TECHNICAL <span className="serif">ARSENAL</span></h2>
+        <h2 className="arsenal-title">Tech <span className="serif">Stack</span></h2>
 
         <div className="arsenal-grid">
           {/* Languages */}
@@ -335,7 +335,7 @@ export default function Home() {
           <h2 className="section-title">
             Selected <span className="serif">Work</span> <span className="star">✦</span>
           </h2>
-          <p className="section-subtitle">hover the folder to see what&apos;s inside</p>
+
         </div>
 
         <div className="folders-grid">
@@ -391,7 +391,7 @@ export default function Home() {
           </div>
 
           <div className="folder-container">
-            <div className="folder-tab reddish-gradient">WORK EXPERIENCE</div>
+            <div className="folder-tab reddish-gradient"> Open Source</div>
             <div className="folder-body dashboard-grid">
               <div className="folder-header">
                 <span className="folder-count">● 3 ROLES</span>
@@ -467,7 +467,7 @@ export default function Home() {
 
       <section className="testimonials-section container">
         <h2 className="section-title text-center">
-          Some kind <span className="serif">words</span> <span className="star">✦</span>
+          Coding <span className="serif">profiles</span> <span className="star">✦</span>
         </h2>
 
         <div className="testimonials-grid">
