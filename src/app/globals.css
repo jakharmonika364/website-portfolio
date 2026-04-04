@@ -1518,7 +1518,8 @@ nav ul li a:hover {
   border-radius: 36px;
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.03);
   /* Lighter, more premium shadow for cards */
-  overflow: hidden;
+  /* overflow: hidden; Removed to allow paperclip to bleed */
+  overflow: visible;
   position: sticky;
   /* Sticky Stacking Override */
   transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1), box-shadow 0.6s ease;
@@ -1552,6 +1553,8 @@ nav ul li a:hover {
 .testi-header {
   padding: 3rem 4rem 2rem;
   text-align: left;
+  border-radius: 36px 36px 0 0;
+  /* Match card radius for visible overflow */
 }
 
 .testi-header.sky-blue {
@@ -1597,21 +1600,45 @@ nav ul li a:hover {
 }
 
 /* Original Metallic Clip Integration */
+/* Realistic CSS Paperclip - Naturally Attached */
 .paper-clip {
   position: absolute;
-  top: 1rem;
-  right: 1.8rem;
-  width: 70px;
-  height: 120px;
-  background-image: url("/clip.jpg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  transform: rotate(20deg);
-  z-index: 10;
-  mix-blend-mode: multiply;
-  /* Ensures white BG becomes transparent */
-  filter: contrast(1.1) brightness(1.1);
-  /* Pop the metal */
+  top: -20px;
+  right: 25px;
+  width: 22px;
+  height: 54px;
+  z-index: 100;
+  transform: rotate(25deg);
+  pointer-events: none;
+}
+
+.paper-clip::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1.8px solid #94a3b8;
+  border-radius: 12px;
+  background: transparent;
+  box-shadow:
+    inset 0.5px 0.5px 0px rgba(255, 255, 255, 0.8),
+    1px 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+.paper-clip::after {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 4px;
+  right: 4px;
+  bottom: 12px;
+  border: 1.8px solid #94a3b8;
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  box-shadow: inset 0.5px 0.5px 0px rgba(255, 255, 255, 0.5);
+}
+
+.testimonial-card .paper-clip {
+  filter: drop-shadow(2px 3px 5px rgba(0, 0, 0, 0.12));
 }
 
 .item-title {
