@@ -338,127 +338,64 @@ export default function Home() {
 
         </div>
 
-        <div className="folders-grid">
-          {/* Projects Folder */}
-          <div className="folder-container">
-            <div className="folder-tab orange-gradient">PROJECTS</div>
-            <div className="folder-body dashboard-grid">
-              <div className="folder-header">
-                <span className="folder-count">● 4 WORKS</span>
-                <span className="folder-years">2023 — 2025</span>
-              </div>
-
-              <div className="cards-stack">
-                <div className="stack-card card-4 pink-card">
-                  <div className="card-label">UI/UX • DESIGN SYSTEM</div>
-                  <h3 className="card-title">Sofy</h3>
-                  <div className="card-footer">
-                    <span className="card-year">2024</span>
-                    <span className="card-number">04</span>
-                  </div>
-                </div>
-                <div className="stack-card card-3 teal-card">
-                  <div className="card-label">CAMPAIGN • MARKETING</div>
-                  <h3 className="card-title">Every Girl, A<br />Bright Future</h3>
-                  <div className="card-footer">
-                    <span className="card-year">2025</span>
-                    <span className="card-number">03</span>
-                  </div>
-                </div>
-                <div className="stack-card card-2 blue-card">
-                  <div className="card-label">UI/UX • ACCESSIBILITY</div>
-                  <h3 className="card-title">hoTouch</h3>
-                  <div className="card-footer">
-                    <span className="card-year">2024</span>
-                    <span className="card-number">02</span>
-                  </div>
-                </div>
-                <div className="stack-card card-1 main-peach">
-                  <div className="card-label">VISUAL DESIGN • PRINT</div>
-                  <h3 className="card-title">Beyond The<br />Letter</h3>
-                  <div className="card-footer">
-                    <span className="card-year">2025</span>
-                    <span className="card-number">01</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="folder-bottom">
-                <span className="folder-owner">MONIKA JAKHAR</span>
-                <span className="folder-action">select a card ↑</span>
-              </div>
+        <div className="testimonials-grid">
+          {/* Projects as Paperclip Cards */}
+          <div className="testimonial-card rotate-neg">
+            <div className="paper-clip"></div>
+            <div className="testi-header sky-blue"></div>
+            <div className="testi-body" style={{ minHeight: '300px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <div className="handwritten" style={{ fontSize: '3rem', color: '#111' }}>Project One</div>
             </div>
           </div>
 
-          <div className="folder-container">
-            <div className="folder-tab reddish-gradient"> Open Source</div>
-            <div className="folder-body dashboard-grid">
-              <div className="folder-header">
-                <span className="folder-count">● 3 ROLES</span>
-                <span className="folder-years">2021 — 2024</span>
-              </div>
+          <div className="testimonial-card rotate-pos">
+            <div className="paper-clip"></div>
+            <div className="testi-header orchid-pink"></div>
+            <div className="testi-body" style={{ minHeight: '300px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <div className="handwritten" style={{ fontSize: '3rem', color: '#111' }}>Project Two</div>
+            </div>
+          </div>
 
-              <div className="cards-stack">
-                <div className="stack-card card-3 indigo-card">
-                  <div className="card-label">PROJECT MANAGEMENT • TOOLS</div>
-                  <h3 className="card-title">Miro<br />Boards</h3>
-                  <div className="card-footer">
-                    <span className="card-year">2021</span>
-                    <span className="card-number">03</span>
-                  </div>
-                </div>
-                <div className="stack-card card-2 purple-card">
-                  <div className="card-label">CONTENT DESIGN • SOCIAL</div>
-                  <h3 className="card-title">Marketing<br />Assets</h3>
-                  <div className="card-footer">
-                    <span className="card-year">2023</span>
-                    <span className="card-number">02</span>
-                  </div>
-                </div>
-                <div className="stack-card card-1 main-orange">
-                  <div className="card-label">VISUAL DESIGN • INTERN</div>
-                  <h3 className="card-title">Suroskie<br />Beauty</h3>
-                  <div className="card-footer">
-                    <span className="card-year">2024</span>
-                    <span className="card-number">01</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="folder-bottom">
-                <span className="folder-owner">MONIKA JAKHAR</span>
-                <span className="folder-action">select a card ↑</span>
-              </div>
+          <div className="testimonial-card rotate-neg">
+            <div className="paper-clip"></div>
+            <div className="testi-header mint-green"></div>
+            <div className="testi-body" style={{ minHeight: '300px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <div className="handwritten" style={{ fontSize: '3rem', color: '#111' }}>Project Three</div>
             </div>
           </div>
         </div>
       </section>
 
       <section className="highlights-section container">
+        <div className="section-header">
+          <h2 className="section-title">
+            Open <span className="serif">Source</span> <span className="star">✦</span>
+          </h2>
+        </div>
         <div className="project-highlight-grid">
           <ProjectCard
             img="/way_com_ux_showcase_1775204723472.png"
-            company="Way.com"
+            company="GitHub"
             year="2024"
-            devices="💻 📱"
-            category="GIS • B2C"
-            title="Reducing ambiguity in on-street parking through scalable UX systems"
-            desc="Redesigning the on-street parking flow to reduce confusion and increase successful bookings."
-            part={["End-to-end ownership.", "UX + UI", "Design system"]}
-            impact="Established a development ready, GIS-powered on-street parking system, backed by scalable design system foundations."
-            shipped={false}
+            devices="💻"
+            category="Contribution"
+            title="React Core Contributions"
+            desc="Improving accessibility and performance in the React ecosystem."
+            part={["Bug Fixes", "Feature Implementation"]}
+            impact="Reduced re-render cycles by 15% in complex dashboard scenarios."
+            shipped={true}
             bgColorClass="way-bg"
           />
           <ProjectCard
             img="/cashback_ux_showcase_1775204750677.png"
-            company="Way.com"
-            year="2024"
-            devices="📱"
-            category="Explainer Storyboard"
-            title="Redesigned cashback flow: improved completion by 20%"
-            desc="Re-engineering the rewards experience to simplify redemption journeys."
-            part={["UX Research", "Visual Design", "Interaction Design"]}
-            impact="Delivered a streamlined cashback experience that led to higher user retention and significant drop in support queries."
+            company="Next.js"
+            year="2023"
+            devices="💻"
+            category="Open Source"
+            title="Documentation Overhaul"
+            desc="Revamping the routing documentation for better developer onboarding."
+            part={["Technical Writing", "Examples"]}
+            impact="Increased documentation satisfaction score by 40% based on community feedback."
             shipped={true}
             bgColorClass="shell-bg"
           />
@@ -470,37 +407,110 @@ export default function Home() {
           Coding <span className="serif">profiles</span> <span className="star">✦</span>
         </h2>
 
-        <div className="testimonials-grid">
-          <div className="testimonial-card rotate-neg">
-            <div className="paper-clip"></div>
-            <div className="testi-header sky-blue">
-              <h4 className="testi-name">Santosh Yadav</h4>
-              <p className="testi-company">Anubit Solutions</p>
-            </div>
-            <div className="testi-body">
-              <p>&quot;Monika is a pleasure to work with. While working with us she showed the ability to think outside the box and handle unforeseen challenges with creative solutions. She helped us bring our ideas to reality with her design thinking.&quot;</p>
-            </div>
-          </div>
+        <div className="folders-grid" style={{ justifyContent: 'center', marginTop: '6rem' }}>
+          <div className="folder-container" style={{ width: '800px' }}>
+            <div className="folder-tab blueish-gradient">CODING PROFILES</div>
+            <div className="folder-body" style={{ height: '520px' }}>
+              <div className="folder-header">
+                <span className="folder-count">4 Profiles FOUND</span>
+                <span className="folder-years"></span>
+              </div>
 
-          <div className="testimonial-card rotate-pos">
-            <div className="paper-clip"></div>
-            <div className="testi-header orchid-pink">
-              <h4 className="testi-name">Arvind Tiwari</h4>
-              <p className="testi-company">NetApp</p>
-            </div>
-            <div className="testi-body">
-              <p>&quot;Working with Monika has been a game-changer for our product. Her eye for detail, user-first mindset, and ability to turn complex ideas into clean, intuitive designs greatly improved our user experience.&quot;</p>
-            </div>
-          </div>
+              <div className="cards-stack">
+                {/* Codolio Profile Card */}
+                <div className="stack-card card-4 indigo-card">
+                  <div className="card-label">CODOLIO</div>
+                  <div className="profile-content" style={{ gap: '0.8rem', padding: '0', alignItems: 'center' }}>
+                    <div className="profile-icon-circle" style={{ width: '60px', height: '60px', background: 'rgba(255,255,255,0.2)' }}>
+                      <Terminal size={30} color="white" />
+                    </div>
+                    <div className="profile-link-name" style={{ color: 'white', fontSize: '0.7rem' }}>@monikajakhar</div>
+                    <div className="profile-stats">
+                      <div className="stat-box">
+                        <span className="stat-value" style={{ color: 'white', fontSize: '1rem' }}>ACTIVE</span>
+                        <span className="stat-label-tiny" style={{ color: 'rgba(255,255,255,0.6)' }}>Status</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="card-footer">
+                    <span className="card-year"></span>
+                    <span className="card-number">04</span>
+                  </div>
+                </div>
 
-          <div className="testimonial-card rotate-neg">
-            <div className="paper-clip"></div>
-            <div className="testi-header mint-green">
-              <h4 className="testi-name">Ashutosh Patel</h4>
-              <p className="testi-company">NuageBiz Tech</p>
-            </div>
-            <div className="testi-body">
-              <p>&quot;Monika is a highly reliable and creative teammate. She brings strong UI/UX expertise to the table and always ensures that designs are not only visually appealing but also user-friendly.&quot;</p>
+                {/* GitHub Profile Card */}
+                <div className="stack-card card-3 dark-card">
+                  <div className="card-label">GITHUB</div>
+                  <div className="profile-content" style={{ gap: '0.8rem', padding: '0', alignItems: 'center' }}>
+                    <div className="profile-icon-circle" style={{ width: '60px', height: '60px', background: 'rgba(255,255,255,0.1)' }}>
+                      <Code2 size={30} color="white" />
+                    </div>
+                    <div className="profile-link-name" style={{ color: 'white', fontSize: '0.7rem' }}>@jakharmonika364</div>
+                    <div className="profile-stats">
+                      <div className="stat-box">
+                        <span className="stat-value" style={{ color: 'white', fontSize: '1rem' }}>500+</span>
+                        <span className="stat-label-tiny" style={{ color: 'rgba(255,255,255,0.6)' }}>Contribs</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="card-footer">
+                    <span className="card-year"></span>
+                    <span className="card-number">03</span>
+                  </div>
+                </div>
+
+                {/* GFG Profile Card */}
+                <div className="stack-card card-2 mint-card">
+                  <div className="card-label">GEEKSFORGEEKS</div>
+                  <div className="profile-content" style={{ gap: '0.8rem', padding: '0', alignItems: 'center' }}>
+                    <div className="profile-icon-circle" style={{ width: '60px', height: '60px', background: 'rgba(255,255,255,0.2)' }}>
+                      <span style={{ color: 'white', fontSize: '1.8rem', fontWeight: '900', fontFamily: 'serif' }}>G</span>
+                    </div>
+                    <div className="profile-link-name" style={{ color: 'white', fontSize: '0.7rem' }}>@monikajakhar</div>
+                    <div className="profile-stats">
+                      <div className="stat-box">
+                        <span className="stat-value" style={{ color: 'white', fontSize: '1rem' }}>180+</span>
+                        <span className="stat-label-tiny" style={{ color: 'rgba(255,255,255,0.6)' }}>Solved</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="card-footer">
+                    <span className="card-year"></span>
+                    <span className="card-number">02</span>
+                  </div>
+                </div>
+
+                {/* LeetCode Profile Card */}
+                <div className="stack-card card-1 main-orange">
+                  <div className="card-label">LEETCODE</div>
+                  <div className="profile-content" style={{ gap: '0.8rem', padding: '0', alignItems: 'center' }}>
+                    <div className="profile-icon-circle" style={{ width: '60px', height: '60px', background: 'rgba(0,0,0,0.3)' }}>
+                      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 14.355c0-.742-.564-1.346-1.26-1.346H10.676c-.696 0-1.26.604-1.26 1.346s.564 1.346 1.26 1.346H20.74c.696 0 1.26-.604 1.26-1.346z" fill="#B3B3B3" />
+                        <path d="M18.83 7.686c-.504-.538-1.321-.538-1.825 0l-5.105 5.441c-.504.538-.504 1.41 0 1.948l.913.974c.504.538 1.321.538 1.825 0l5.105-5.441c.504-.538.504-1.41 0-1.948l-.913-.974z" fill="#FFA116" />
+                        <path d="M5.17 14.814c-.504-.538-1.321-.538-1.825 0l-1.011 1.077c-.504.538-.504 1.41 0 1.948l3.226 3.439c.504.538 1.321.538 1.825 0l1.011-1.077c.504-.538.504-1.41 0-1.948l-3.226-3.439z" fill="#B3B3B3" />
+                        <path d="M12.033 1.157c-.504-.538-1.321-.538-1.825 0L4.103 7.686c-.504.538-.504 1.41 0 1.948l.913.974c.504.538 1.321.538 1.825 0l6.105-6.529c.504-.538.504-1.41 0-1.948l-.913-.974z" fill="#B3B3B3" />
+                      </svg>
+                    </div>
+                    <div className="profile-link-name" style={{ color: 'white', fontSize: '0.7rem' }}>@monikajakhar</div>
+                    <div className="profile-stats">
+                      <div className="stat-box">
+                        <span className="stat-value" style={{ color: 'white', fontSize: '1rem' }}>250+</span>
+                        <span className="stat-label-tiny" style={{ color: 'rgba(255,255,255,0.6)' }}>Solved</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="card-footer" style={{ marginTop: 'auto' }}>
+                    <span className="card-year"></span>
+                    <span className="card-number">01</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="folder-bottom">
+                <span className="folder-owner"></span>
+                <span className="folder-action">select a card ↑</span>
+              </div>
             </div>
           </div>
         </div>

@@ -1003,6 +1003,11 @@ nav ul li a:hover {
   box-shadow: 0 10px 30px rgba(249, 115, 22, 0.2);
 }
 
+.blueish-gradient {
+  background: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 100%);
+  box-shadow: 0 10px 30px rgba(14, 165, 233, 0.2);
+}
+
 .folder-body {
   background: #231f20;
   /* Warm brownish-black as seen in reference */
@@ -1157,6 +1162,16 @@ nav ul li a:hover {
 
 .purple-card {
   background: linear-gradient(145deg, #c084fc, #a855f7);
+  opacity: 1;
+}
+
+.mint-card {
+  background: linear-gradient(145deg, #4ade80, #22c55e);
+  opacity: 1;
+}
+
+.dark-card {
+  background: linear-gradient(145deg, #4b5563, #1f2937);
   opacity: 1;
 }
 
@@ -1506,16 +1521,16 @@ nav ul li a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4rem;
-  margin-top: 6rem;
+  gap: 3rem;
+  margin-top: 4rem;
 }
 
 .testimonial-card {
   width: 100%;
-  max-width: 650px;
+  max-width: 850px;
   background: white;
   border: 1px solid #f1f5f9;
-  border-radius: 36px;
+  border-radius: 42px;
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.03);
   /* Lighter, more premium shadow for cards */
   /* overflow: hidden; Removed to allow paperclip to bleed */
@@ -1526,19 +1541,19 @@ nav ul li a:hover {
 }
 
 .testimonial-card:nth-child(1) {
-  top: 12rem;
+  top: 10rem;
   z-index: 10;
   transform: rotate(-1.5deg);
 }
 
 .testimonial-card:nth-child(2) {
-  top: 15rem;
+  top: 18rem;
   z-index: 20;
   transform: rotate(1.2deg);
 }
 
 .testimonial-card:nth-child(3) {
-  top: 18rem;
+  top: 26rem;
   z-index: 30;
   transform: rotate(-0.8deg);
 }
@@ -1551,7 +1566,7 @@ nav ul li a:hover {
 }
 
 .testi-header {
-  padding: 3rem 4rem 2rem;
+  padding: 2.2rem 3.5rem 1.2rem;
   text-align: left;
   border-radius: 36px 36px 0 0;
   /* Match card radius for visible overflow */
@@ -1587,9 +1602,15 @@ nav ul li a:hover {
   margin-top: 0.3rem;
 }
 
+.testi-header-content {
+  display: flex;
+  flex-direction: column;
+}
+
 .testi-body {
-  padding: 3rem 4rem 4rem;
+  padding: 4rem 5rem 5rem;
   text-align: left;
+  min-height: 450px;
 }
 
 .testi-body p {
@@ -1599,16 +1620,119 @@ nav ul li a:hover {
   font-weight: 500;
 }
 
+/* Coding Profile Styles */
+.profile-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  padding: 0.5rem 0;
+}
+
+.profile-icon-circle {
+  width: 90px;
+  height: 90px;
+  background: #111;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+.profile-icon-circle::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.testimonial-card:hover .profile-icon-circle {
+  transform: scale(1.1) translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.profile-link-name {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  color: #111;
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.sky-blue .testi-header-text, .sky-blue .profile-link-name {
+  color: #0369a1;
+}
+
+.orchid-pink .testi-header-text, .orchid-pink .profile-link-name {
+  color: #a21caf;
+}
+
+.mint-green .testi-header-text, .mint-green .profile-link-name {
+  color: #15803d;
+}
+
+.profile-stats {
+  display: flex;
+  gap: 2rem;
+  margin-top: 0.5rem;
+}
+
+.stat-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-value {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #111827;
+}
+
+.stat-label-tiny {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.profile-visit-btn {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #6b7280;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.profile-visit-btn:hover {
+  color: #111;
+  transform: translateX(4px);
+}
+
 /* Original Metallic Clip Integration */
 /* Realistic CSS Paperclip - Naturally Attached */
 .paper-clip {
   position: absolute;
-  top: -20px;
-  right: 25px;
-  width: 22px;
-  height: 54px;
+  top: -24px;
+  right: 35px;
+  width: 32px;
+  height: 78px;
   z-index: 100;
-  transform: rotate(25deg);
+  transform: rotate(22deg);
   pointer-events: none;
 }
 
@@ -1616,25 +1740,25 @@ nav ul li a:hover {
   content: "";
   position: absolute;
   inset: 0;
-  border: 1.8px solid #94a3b8;
-  border-radius: 12px;
+  border: 2.2px solid #94a3b8;
+  border-radius: 16px;
   background: transparent;
   box-shadow:
-    inset 0.5px 0.5px 0px rgba(255, 255, 255, 0.8),
-    1px 2px 3px rgba(0, 0, 0, 0.1);
+    inset 0.8px 0.8px 0px rgba(255, 255, 255, 0.8),
+    1.5px 3px 5px rgba(0, 0, 0, 0.1);
 }
 
 .paper-clip::after {
   content: "";
   position: absolute;
-  top: 7px;
-  left: 4px;
-  right: 4px;
-  bottom: 12px;
-  border: 1.8px solid #94a3b8;
+  top: 10px;
+  left: 6px;
+  right: 6px;
+  bottom: 18px;
+  border: 2.2px solid #94a3b8;
   border-top: none;
-  border-radius: 0 0 10px 10px;
-  box-shadow: inset 0.5px 0.5px 0px rgba(255, 255, 255, 0.5);
+  border-radius: 0 0 14px 14px;
+  box-shadow: inset 0.8px 0.8px 0px rgba(255, 255, 255, 0.5);
 }
 
 .testimonial-card .paper-clip {
