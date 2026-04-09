@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState, useRef } from "react";
+import { GitHubCalendar } from 'react-github-calendar';
 import {
   Code2,
   Globe,
@@ -138,8 +139,8 @@ export default function Home() {
       </header>
 
       <section className="container hero">
-        <div className="hero-text">
-          <div className="badge">Communication Designer</div>
+        <div className="hero-text hero-text-new">
+          <div className="hero-eyebrow">HELLO, I&apos;M</div>
 
           <h1 className="hero-title">
             <span className="name-first">
@@ -147,35 +148,25 @@ export default function Home() {
                 <span key={i} className="letter">{l}</span>
               ))}
             </span>
-            <span className="name-last">
+            {/* <span className="name-last">
               {"JAKHAR".split("").map((l, i) => (
                 <span key={i} className="letter">{l}</span>
               ))}
-            </span>
+            </span> */}
           </h1>
 
-          <div className="hero-stats">
-            <div className="stat-item">
-              <span className="stat-num">15+</span>
-              <span className="stat-label">Projects Completed</span>
-            </div>
-            <div className="stat-item">
-              <span className="stat-num">500+</span>
-              <span className="stat-label">GitHub Contributions</span>
-            </div>
-            <div className="stat-item">
-              <span className="stat-num">4+</span>
-              <span className="stat-label">Open Source</span>
-            </div>
-            <div className="stat-item">
-              <span className="stat-num">6+</span>
-              <span className="stat-label">Months Experience</span>
-            </div>
-          </div>
+          <h2 className="hero-subtitle">
+            Crafting Design into <span className="highlight-text">Real-World Solutions</span>
+          </h2>
 
-          <p className="location-text">
-            Based in the United States
+          <p className="hero-description">
+            Data Analyst & Full Stack Developer | Building meaningful digital experiences.
           </p>
+
+          <div className="hero-buttons">
+            <a href="#work" className="btn-primary">View Work</a>
+            <a href="#contact" className="btn-secondary">Contact Me</a>
+          </div>
 
         </div>
 
@@ -189,7 +180,6 @@ export default function Home() {
             className="hero-portrait"
           />
         </div>
-
       </section>
 
       <section className="arsenal-section">
@@ -627,6 +617,42 @@ export default function Home() {
               </form>
             </div>
           </div>
+        </div>
+      </section>
+      <section className="github-section container" id="github">
+        <div className="section-header github-header">
+          <h2 className="github-title">GITHUB</h2>
+          <p className="github-subtitle">Consistency is key. My open source contributions and coding streak.</p>
+        </div>
+
+        <div className="github-top-grid">
+          <div className="github-profile-card">
+            <div className="github-avatar-wrapper">
+              <Image src="https://github.com/jakharmonika364.png" alt="GitHub Avatar" width={100} height={100} className="github-avatar" />
+            </div>
+            <h3 className="github-name">Monika Jakhar</h3>
+            <p className="github-username">@jakharmonika364</p>
+            <a href="https://github.com/jakharmonika364" target="_blank" rel="noopener noreferrer" className="github-btn">
+              View Profile
+            </a>
+          </div>
+
+          <div className="github-card github-heatmap-card">
+            <GitHubCalendar 
+              username="jakharmonika364" 
+              colorScheme="dark" 
+              blockSize={15}
+              blockMargin={5}
+              fontSize={16}
+              theme={{
+                dark: ['#161b22', '#0e4429', '#006d32', '#26a641', '#39d353'],
+              }}
+            />
+          </div>
+        </div>
+
+        <div className="github-card github-activity-card">
+          <img src="https://github-readme-activity-graph.vercel.app/graph?username=jakharmonika364&bg_color=0B0B0B&color=06b6d4&line=06b6d4&point=FFFFFF&hide_border=true&title_color=ffffff&axes_color=94a3b8" alt="GitHub Activity Graph" className="github-graph-img" />
         </div>
       </section>
     </main>
