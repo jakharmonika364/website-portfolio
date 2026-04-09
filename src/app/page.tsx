@@ -179,32 +179,15 @@ export default function Home() {
 
         </div>
 
-        <div className="polaroids-container">
-
-          <div className="polaroid polaroid-1">
-            <Image
-              src="/polaroid1.png"
-              alt="Where it all began"
-              width={240}
-              height={240}
-            />
-            <div className="handwritten note-bottom">
-              where it all began
-            </div>
-          </div>
-
-          <div className="polaroid polaroid-2">
-            <Image
-              src="/polaroid2.png"
-              alt="Still that same curiosity"
-              width={340}
-              height={340}
-            />
-            <div className="handwritten note-bottom">
-              still that same curiosity
-            </div>
-          </div>
-
+        <div className="hero-main-image">
+          <Image
+            src="/photo1.jpeg"
+            alt="Monika Jakhar"
+            width={480}
+            height={600}
+            priority
+            className="hero-portrait"
+          />
         </div>
 
       </section>
