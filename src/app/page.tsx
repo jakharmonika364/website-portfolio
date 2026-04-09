@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import {
   Code2,
   Globe,
@@ -10,11 +10,13 @@ import {
   Layers,
   Layout,
   Server,
-  ShieldCheck,
   BarChart3,
   Search,
+  HardDrive,
+  ShieldCheck,
   PieChart,
-  HardDrive
+  LineChart,
+  Activity
 } from 'lucide-react';
 
 // Project Card Component with Custom Floating Cursor
@@ -29,7 +31,8 @@ function ProjectCard({
   part,
   impact,
   shipped = false,
-  bgColorClass = ""
+  bgColorClass = "",
+  href = ""
 }: any) {
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
@@ -45,10 +48,16 @@ function ProjectCard({
     }
   };
 
+  const handleClick = () => {
+    if (href) window.open(href, '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <div
       className="project-item-card"
       ref={cardRef}
+      onClick={handleClick}
+      style={href ? { cursor: 'pointer' } : {}}
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
       onMouseMove={handleMouseMove}
@@ -168,29 +177,9 @@ export default function Home() {
             Based in the United States
           </p>
 
-          <div className="status-section">
-            <div className="status-badge">
-              <div className="status-dot-container">
-                <span style={{ fontSize: '1.8rem', color: 'white', fontWeight: '300' }}>+</span>
-              </div>
-              <div className="status-label">
-                <span className="label-top">Status</span>
-                <span className="label-main">Open to work</span>
-              </div>
-            </div>
-            <p className="status-sub">internships & co-ops</p>
-          </div>
         </div>
 
         <div className="polaroids-container">
-          <svg className="curved-arrow" width="100" height="80" viewBox="0 0 100 80" style={{ position: 'absolute', top: '10px', left: '160px', zIndex: 15 }}>
-            <path d="M10,10 Q50,10 80,60" fill="none" stroke="#d1d5db" strokeWidth="1.5" strokeDasharray="5 3" />
-            <path d="M72,55 L80,60 L85,50" fill="none" stroke="#d1d5db" strokeWidth="1.5" />
-          </svg>
-
-          <div className="handwritten note-top" style={{ top: '-20px', left: '20px', width: '220px' }}>
-            colors were my very first love —<br /> long before I had a name for it 🎨
-          </div>
 
           <div className="polaroid polaroid-1">
             <Image
@@ -216,113 +205,103 @@ export default function Home() {
             </div>
           </div>
 
-          <svg className="curved-arrow" width="100" height="80" viewBox="0 0 100 80" style={{ position: 'absolute', bottom: '-10px', left: '210px', zIndex: 15 }}>
-            <path d="M10,10 Q40,60 80,70" fill="none" stroke="#d1d5db" strokeWidth="1.5" strokeDasharray="5 3" />
-            <path d="M70,65 L80,70 L75,60" fill="none" stroke="#d1d5db" strokeWidth="1.5" />
-          </svg>
-
-          <div className="handwritten note-right">
-            that obsession quietly shaped me into a designer ✦
-          </div>
         </div>
 
-        <div className="scroll-indicator">
-          <span>SCROLL</span>
-          <div className="scroll-line"></div>
-        </div>
       </section>
 
       <section className="arsenal-section">
         <h2 className="arsenal-title">Tech <span className="serif">Stack</span></h2>
 
-        <div className="arsenal-grid">
-          {/* Languages */}
-          <div className="arsenal-box">
-            <h3 className="category-title languages">LANGUAGES</h3>
-            <div className="skill-icons-grid">
+        <div className="arsenal-container">
+          {/* Group 1: Frontend Development */}
+          <div className="tech-group">
+            <h3 className="category-header">
+              <span className="header-icon"><Layout size={28} /></span>
+              Frontend Development
+            </h3>
+            <div className="skill-icons-grid centered-grid">
               <div className="skill-card-container">
-                <div className="skill-card js"><Code2 size={24} /></div>
-                <span className="skill-name">JavaScript</span>
-              </div>
-              <div className="skill-card-container">
-                <div className="skill-card ts"><Terminal size={24} /></div>
-                <span className="skill-name">TypeScript</span>
-              </div>
-              <div className="skill-card-container">
-                <div className="skill-card py"><Globe size={24} /></div>
-                <span className="skill-name">Python</span>
-              </div>
-              <div className="skill-card-container">
-                <div className="skill-card go"><Database size={24} /></div>
-                <span className="skill-name">Go</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Frontend */}
-          <div className="arsenal-box">
-            <h3 className="category-title frontend">FRONTEND</h3>
-            <div className="skill-icons-grid">
-              <div className="skill-card-container">
-                <div className="skill-card react"><Layers size={24} /></div>
+                <div className="skill-card react"><img src="https://skillicons.dev/icons?i=react" alt="React" width={40} height={40} /></div>
                 <span className="skill-name">React</span>
               </div>
               <div className="skill-card-container">
-                <div className="skill-card tw"><Layout size={24} /></div>
-                <span className="skill-name">Tailwind</span>
-              </div>
-              <div className="skill-card-container">
-                <div className="skill-card next"><HardDrive size={24} /></div>
+                <div className="skill-card next"><img src="https://skillicons.dev/icons?i=nextjs" alt="Next.js" width={40} height={40} /></div>
                 <span className="skill-name">Next.js</span>
               </div>
               <div className="skill-card-container">
-                <div className="skill-card figma"><Search size={24} /></div>
+                <div className="skill-card tw"><img src="https://skillicons.dev/icons?i=tailwind" alt="Tailwind" width={40} height={40} /></div>
+                <span className="skill-name">Tailwind</span>
+              </div>
+              <div className="skill-card-container">
+                <div className="skill-card js"><img src="https://skillicons.dev/icons?i=js" alt="JavaScript" width={40} height={40} /></div>
+                <span className="skill-name">JavaScript</span>
+              </div>
+              <div className="skill-card-container">
+                <div className="skill-card ts"><img src="https://skillicons.dev/icons?i=ts" alt="TypeScript" width={40} height={40} /></div>
+                <span className="skill-name">TypeScript</span>
+              </div>
+              <div className="skill-card-container">
+                <div className="skill-card figma"><img src="https://skillicons.dev/icons?i=figma" alt="Figma" width={40} height={40} /></div>
                 <span className="skill-name">Figma</span>
               </div>
             </div>
           </div>
 
-          {/* Backend & DevOps */}
-          <div className="arsenal-box">
-            <h3 className="category-title backend">BACKEND & DEVOPS</h3>
-            <div className="skill-icons-grid">
+          {/* Group 2: Backend & Cloud */}
+          <div className="tech-group">
+            <h3 className="category-header">
+              <span className="header-icon"><Server size={28} /></span>
+              Backend & Cloud
+            </h3>
+            <div className="skill-icons-grid centered-grid">
               <div className="skill-card-container">
-                <div className="skill-card node"><Server size={24} /></div>
+                <div className="skill-card node"><img src="https://skillicons.dev/icons?i=nodejs" alt="Node.js" width={40} height={40} /></div>
                 <span className="skill-name">Node.js</span>
               </div>
               <div className="skill-card-container">
-                <div className="skill-card mysql"><Database size={24} /></div>
+                <div className="skill-card go"><img src="https://skillicons.dev/icons?i=go" alt="Go" width={40} height={40} /></div>
+                <span className="skill-name">Go</span>
+              </div>
+              <div className="skill-card-container">
+                <div className="skill-card py"><img src="https://skillicons.dev/icons?i=python" alt="Python" width={40} height={40} /></div>
+                <span className="skill-name">Python</span>
+              </div>
+              <div className="skill-card-container">
+                <div className="skill-card mysql"><img src="https://skillicons.dev/icons?i=mysql" alt="MySQL" width={40} height={40} /></div>
                 <span className="skill-name">MySQL</span>
               </div>
               <div className="skill-card-container">
-                <div className="skill-card docker"><HardDrive size={24} /></div>
+                <div className="skill-card docker"><img src="https://skillicons.dev/icons?i=docker" alt="Docker" width={40} height={40} /></div>
                 <span className="skill-name">Docker</span>
               </div>
               <div className="skill-card-container">
-                <div className="skill-card kube"><ShieldCheck size={24} /></div>
-                <span className="skill-name">K8s</span>
+                <div className="skill-card kube"><img src="https://skillicons.dev/icons?i=kubernetes" alt="Kubernetes" width={40} height={40} /></div>
+                <span className="skill-name">Kubernetes</span>
               </div>
             </div>
           </div>
 
-          {/* Data Science & Analytics */}
-          <div className="arsenal-box">
-            <h3 className="category-title data">DATA SCIENCE</h3>
-            <div className="skill-icons-grid">
+          {/* Group 3: Data Science */}
+          <div className="tech-group">
+            <h3 className="category-header">
+              <span className="header-icon"><Activity size={28} /></span>
+              Data Science
+            </h3>
+            <div className="skill-icons-grid centered-grid">
               <div className="skill-card-container">
-                <div className="skill-card pandas"><BarChart3 size={24} /></div>
+                <div className="skill-card pandas"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" width={45} height={45} /></div>
                 <span className="skill-name">Pandas</span>
               </div>
               <div className="skill-card-container">
-                <div className="skill-card numpy"><PieChart size={24} /></div>
+                <div className="skill-card numpy"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy" width={45} height={45} /></div>
                 <span className="skill-name">NumPy</span>
               </div>
               <div className="skill-card-container">
-                <div className="skill-card plot"><Globe size={24} /></div>
+                <div className="skill-card plot"><img src="https://skillicons.dev/icons?i=matlab" alt="Matplotlib" width={40} height={40} /></div>
                 <span className="skill-name">Matplotlib</span>
               </div>
               <div className="skill-card-container">
-                <div className="skill-card sea"><ShieldCheck size={24} /></div>
+                <div className="skill-card sea"><img src="https://skillicons.dev/icons?i=py" alt="Seaborn" width={40} height={40} /></div>
                 <span className="skill-name">Seaborn</span>
               </div>
             </div>
@@ -333,34 +312,105 @@ export default function Home() {
       <section className="work-section" id="work">
         <div className="section-header">
           <h2 className="section-title">
-            Selected <span className="serif">Work</span> <span className="star">✦</span>
+            Projects <span className="star">✦</span>
           </h2>
-
         </div>
 
-        <div className="testimonials-grid">
-          {/* Projects as Paperclip Cards */}
-          <div className="testimonial-card rotate-neg">
-            <div className="paper-clip"></div>
-            <div className="testi-header sky-blue"></div>
-            <div className="testi-body" style={{ minHeight: '300px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <div className="handwritten" style={{ fontSize: '3rem', color: '#111' }}>Project One</div>
+        <div className="projects-grid">
+          {/* Web Audio Player */}
+          <div className="project-card">
+            <div className="project-card-img" style={{ background: 'linear-gradient(135deg, #3b1f6e, #1e3a8a)' }}>
+              <span className="project-live-badge">● Live</span>
+              <div className="project-img-mockup audio-mockup">
+                <div className="mock-bar" style={{ width: '40%', background: 'rgba(167,139,250,0.7)' }}></div>
+                <div className="mock-bar" style={{ width: '70%', background: 'rgba(139,92,246,0.5)' }}></div>
+                <div className="mock-bar" style={{ width: '55%', background: 'rgba(109,40,217,0.5)' }}></div>
+              </div>
+            </div>
+            <div className="project-card-body">
+              <h3 className="project-card-title">
+                <span className="project-icon">⌬</span> Web Audio Player
+              </h3>
+              <p className="project-card-desc">A high-performance web-based audio player with real-time visualizations and advanced control mechanics using the Web Audio API.</p>
+              <div className="project-tags">
+                <span className="project-tag">JavaScript</span>
+                <span className="project-tag">Web Audio API</span>
+                <span className="project-tag">Canvas</span>
+              </div>
+              <div className="project-links">
+                <a href="https://github.com/jakharmonika364/Web-audio-player" target="_blank" rel="noopener noreferrer" className="project-link">⌥ GitHub</a>
+                <a href="https://groove-player.netlify.app/" target="_blank" rel="noopener noreferrer" className="project-link">↗ Live Demo</a>
+              </div>
             </div>
           </div>
 
-          <div className="testimonial-card rotate-pos">
-            <div className="paper-clip"></div>
-            <div className="testi-header orchid-pink"></div>
-            <div className="testi-body" style={{ minHeight: '300px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <div className="handwritten" style={{ fontSize: '3rem', color: '#111' }}>Project Two</div>
+          {/* Sustainable Food Tracker */}
+          <div className="project-card">
+            <div className="project-card-img" style={{ background: 'linear-gradient(135deg, #064e3b, #065f46)' }}>
+              <span className="project-live-badge">● Live</span>
+              <div className="project-img-mockup chart-mockup">
+                <div className="mock-chart-bar" style={{ height: '60%' }}></div>
+                <div className="mock-chart-bar" style={{ height: '85%' }}></div>
+                <div className="mock-chart-bar" style={{ height: '45%' }}></div>
+                <div className="mock-chart-bar" style={{ height: '70%' }}></div>
+                <div className="mock-chart-bar" style={{ height: '90%' }}></div>
+                <div className="mock-chart-bar" style={{ height: '55%' }}></div>
+              </div>
+            </div>
+            <div className="project-card-body">
+              <h3 className="project-card-title">
+                <span className="project-icon">⌬</span> Sustainable Food Tracker
+              </h3>
+              <p className="project-card-desc">Track your food consumption and carbon footprint with smart analytics and sustainability recommendations.</p>
+              <div className="project-tags">
+                <span className="project-tag">React</span>
+                <span className="project-tag">Node.js</span>
+                <span className="project-tag">MongoDB</span>
+              </div>
+              <div className="project-links">
+                <a href="https://github.com/jakharmonika364/Sustainable-Food-Tracker" target="_blank" rel="noopener noreferrer" className="project-link">⌥ GitHub</a>
+                <a href="https://6917bdee950026f7bc8f2bbc--scintillating-bubblegum-952195.netlify.app/" target="_blank" rel="noopener noreferrer" className="project-link">↗ Live Demo</a>
+              </div>
             </div>
           </div>
 
-          <div className="testimonial-card rotate-neg">
-            <div className="paper-clip"></div>
-            <div className="testi-header mint-green"></div>
-            <div className="testi-body" style={{ minHeight: '300px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <div className="handwritten" style={{ fontSize: '3rem', color: '#111' }}>Project Three</div>
+          {/* Student Attendance System */}
+          <div className="project-card">
+            <div className="project-card-img" style={{ background: 'linear-gradient(135deg, #1e3a5f, #1e40af)' }}>
+              <span className="project-live-badge">● Live</span>
+              <div className="project-img-mockup table-mockup">
+                <div className="mock-table-row"><div className="mock-cell wide"></div><div className="mock-cell green"></div></div>
+                <div className="mock-table-row"><div className="mock-cell wide"></div><div className="mock-cell green"></div></div>
+                <div className="mock-table-row"><div className="mock-cell wide"></div><div className="mock-cell green"></div></div>
+              </div>
+            </div>
+            <div className="project-card-body">
+              <h3 className="project-card-title">
+                <span className="project-icon">⌬</span> Student Attendance System
+              </h3>
+              <p className="project-card-desc">Automated attendance tracking system for educational institutions with real-time monitoring and analytics.</p>
+              <div className="project-tags">
+                <span className="project-tag">Java</span>
+                <span className="project-tag">MySQL</span>
+                <span className="project-tag">Spring Boot</span>
+              </div>
+              <div className="project-links">
+                <a href="https://github.com/jakharmonika364/student-attendance-system" target="_blank" rel="noopener noreferrer" className="project-link">⌥ GitHub</a>
+                <a href="https://student-attendance-system-uz1n.onrender.com/" target="_blank" rel="noopener noreferrer" className="project-link">↗ Live Demo</a>
+              </div>
+            </div>
+          </div>
+
+          {/* Soniq Music Player */}
+          <div className="project-card project-card-wide" style={{ background: 'linear-gradient(135deg, #7c3aed, #ec4899, #f97316)' }}>
+            <div className="project-card-body project-card-body-overlay">
+              <div className="music-player-icon">〜</div>
+              <h3 className="project-card-title-light">Soniq Music Player</h3>
+              <p className="project-card-desc-light">Music Player</p>
+              <div className="music-progress-bar"><div className="music-progress-fill"></div></div>
+              <div className="project-links" style={{ marginTop: '1.5rem' }}>
+                <a href="https://github.com/jakharmonika364/soniq-music-player" target="_blank" rel="noopener noreferrer" className="project-link project-link-light">⌥ GitHub</a>
+              </div>
             </div>
           </div>
         </div>
@@ -374,30 +424,30 @@ export default function Home() {
         </div>
         <div className="project-highlight-grid">
           <ProjectCard
-            img="/way_com_ux_showcase_1775204723472.png"
-            company="GitHub"
-            year="2024"
-            devices="💻"
-            category="Contribution"
-            title="React Core Contributions"
-            desc="Improving accessibility and performance in the React ecosystem."
-            part={["Bug Fixes", "Feature Implementation"]}
-            impact="Reduced re-render cycles by 15% in complex dashboard scenarios."
+            img="/fluid.png"
+            company="CNCF / fluid-cloudnative"
+            year="2026"
+            category="Cloud Native · Go · Kubernetes"
+            title="Fluid — Dataset Orchestrator"
+            desc="Fluid is a CNCF Incubating project that provides elastic dataset abstraction and acceleration for AI/big-data workloads on Kubernetes. It bridges cloud storage and compute with intelligent data caching and affinity-based scheduling."
+            part={["Bug Fixes & Code Review", "Go backend contributions", "Kubernetes CRD improvements"]}
+            impact="Contributed to a project with 1.9k+ stars used in production AI and big-data pipelines across cloud-native environments."
             shipped={true}
             bgColorClass="way-bg"
+            href="https://github.com/fluid-cloudnative/fluid"
           />
           <ProjectCard
-            img="/cashback_ux_showcase_1775204750677.png"
-            company="Next.js"
-            year="2023"
-            devices="💻"
-            category="Open Source"
-            title="Documentation Overhaul"
-            desc="Revamping the routing documentation for better developer onboarding."
-            part={["Technical Writing", "Examples"]}
-            impact="Increased documentation satisfaction score by 40% based on community feedback."
+            img="/kyverno.jpeg"
+            company="CNCF / kyverno"
+            year="2026"
+            category="Policy as Code · Go · Kubernetes"
+            title="Kyverno — Policy Engine"
+            desc="Kyverno is a CNCF Incubating policy engine for Kubernetes that validates, mutates, and generates resources via admission controls. It enforces security standards, supply-chain image verification, and governance — all without writing custom webhooks."
+            part={["Policy rule contributions", "Test coverage & CI fixes", "Documentation improvements"]}
+            impact="Contributed to a 7.6k+ star project powering security and compliance automation for thousands of Kubernetes clusters worldwide."
             shipped={true}
             bgColorClass="shell-bg"
+            href="https://github.com/kyverno/kyverno"
           />
         </div>
       </section>
@@ -412,99 +462,54 @@ export default function Home() {
             <div className="folder-tab blueish-gradient">CODING PROFILES</div>
             <div className="folder-body" style={{ height: '520px' }}>
               <div className="folder-header">
-                <span className="folder-count">4 Profiles FOUND</span>
+                {/* <span className="folder-count">4 Profiles FOUND</span> */}
                 <span className="folder-years"></span>
               </div>
 
               <div className="cards-stack">
                 {/* Codolio Profile Card */}
-                <div className="stack-card card-4 indigo-card">
+                <a href="https://codolio.com/profile/monika5" target="_blank" rel="noopener noreferrer" className="stack-card card-4 indigo-card" style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', paddingBottom: '2.5rem' }}>
                   <div className="card-label">CODOLIO</div>
-                  <div className="profile-content" style={{ gap: '0.8rem', padding: '0', alignItems: 'center' }}>
-                    <div className="profile-icon-circle" style={{ width: '60px', height: '60px', background: 'rgba(255,255,255,0.2)' }}>
-                      <Terminal size={30} color="white" />
+                  <div className="profile-content" style={{ gap: '1.5rem', padding: '0', alignItems: 'center' }}>
+                    <div className="profile-icon-circle" style={{ width: '100px', height: '100px', background: 'white', overflow: 'hidden', padding: '0', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
+                      <Image src="/codolio.jpeg" alt="Codolio" width={100} height={100} style={{ objectFit: 'cover', width: '100%', height: '100%' }} />
                     </div>
-                    <div className="profile-link-name" style={{ color: 'white', fontSize: '0.7rem' }}>@monikajakhar</div>
-                    <div className="profile-stats">
-                      <div className="stat-box">
-                        <span className="stat-value" style={{ color: 'white', fontSize: '1rem' }}>ACTIVE</span>
-                        <span className="stat-label-tiny" style={{ color: 'rgba(255,255,255,0.6)' }}>Status</span>
-                      </div>
-                    </div>
+                    <div className="profile-link-name" style={{ color: 'white', fontSize: '1.2rem', fontWeight: '900', letterSpacing: '0.05em' }}>Codolio</div>
                   </div>
-                  <div className="card-footer">
-                    <span className="card-year"></span>
-                    <span className="card-number">04</span>
-                  </div>
-                </div>
+                </a>
 
-                {/* GitHub Profile Card */}
-                <div className="stack-card card-3 dark-card">
-                  <div className="card-label">GITHUB</div>
-                  <div className="profile-content" style={{ gap: '0.8rem', padding: '0', alignItems: 'center' }}>
-                    <div className="profile-icon-circle" style={{ width: '60px', height: '60px', background: 'rgba(255,255,255,0.1)' }}>
-                      <Code2 size={30} color="white" />
+                {/* CodeChef Profile Card */}
+                <a href="https://www.codechef.com/users/monikap25" target="_blank" rel="noopener noreferrer" className="stack-card card-3 dark-card" style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', paddingBottom: '2.5rem' }}>
+                  <div className="card-label">CODECHEF</div>
+                  <div className="profile-content" style={{ gap: '1.5rem', padding: '0', alignItems: 'center' }}>
+                    <div className="profile-icon-circle" style={{ width: '100px', height: '100px', background: 'white', overflow: 'hidden', padding: '0', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
+                      <Image src="/codechef.jpeg" alt="CodeChef" width={100} height={100} style={{ objectFit: 'cover', width: '100%', height: '100%' }} />
                     </div>
-                    <div className="profile-link-name" style={{ color: 'white', fontSize: '0.7rem' }}>@jakharmonika364</div>
-                    <div className="profile-stats">
-                      <div className="stat-box">
-                        <span className="stat-value" style={{ color: 'white', fontSize: '1rem' }}>500+</span>
-                        <span className="stat-label-tiny" style={{ color: 'rgba(255,255,255,0.6)' }}>Contribs</span>
-                      </div>
-                    </div>
+                    <div className="profile-link-name" style={{ color: 'white', fontSize: '1.2rem', fontWeight: '900', letterSpacing: '0.05em' }}>CodeChef</div>
                   </div>
-                  <div className="card-footer">
-                    <span className="card-year"></span>
-                    <span className="card-number">03</span>
-                  </div>
-                </div>
+                </a>
 
                 {/* GFG Profile Card */}
-                <div className="stack-card card-2 mint-card">
+                <a href="https://www.geeksforgeeks.org/profile/jakharmoa9a5" target="_blank" rel="noopener noreferrer" className="stack-card card-2 mint-card" style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', paddingBottom: '2.5rem' }}>
                   <div className="card-label">GEEKSFORGEEKS</div>
-                  <div className="profile-content" style={{ gap: '0.8rem', padding: '0', alignItems: 'center' }}>
-                    <div className="profile-icon-circle" style={{ width: '60px', height: '60px', background: 'rgba(255,255,255,0.2)' }}>
-                      <span style={{ color: 'white', fontSize: '1.8rem', fontWeight: '900', fontFamily: 'serif' }}>G</span>
+                  <div className="profile-content" style={{ gap: '1.5rem', padding: '0', alignItems: 'center' }}>
+                    <div className="profile-icon-circle" style={{ width: '100px', height: '100px', background: 'white', overflow: 'hidden', padding: '0', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
+                      <Image src="/geeksforgeeks.jpeg" alt="GeeksForGeeks" width={100} height={100} style={{ objectFit: 'cover', width: '100%', height: '100%' }} />
                     </div>
-                    <div className="profile-link-name" style={{ color: 'white', fontSize: '0.7rem' }}>@monikajakhar</div>
-                    <div className="profile-stats">
-                      <div className="stat-box">
-                        <span className="stat-value" style={{ color: 'white', fontSize: '1rem' }}>180+</span>
-                        <span className="stat-label-tiny" style={{ color: 'rgba(255,255,255,0.6)' }}>Solved</span>
-                      </div>
-                    </div>
+                    <div className="profile-link-name" style={{ color: 'white', fontSize: '1.2rem', fontWeight: '900', letterSpacing: '0.05em' }}>GeeksForGeeks</div>
                   </div>
-                  <div className="card-footer">
-                    <span className="card-year"></span>
-                    <span className="card-number">02</span>
-                  </div>
-                </div>
+                </a>
 
                 {/* LeetCode Profile Card */}
-                <div className="stack-card card-1 main-orange">
+                <a href="https://leetcode.com/u/monika_jakhar04/" target="_blank" rel="noopener noreferrer" className="stack-card card-1 main-orange" style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', paddingBottom: '2.5rem' }}>
                   <div className="card-label">LEETCODE</div>
-                  <div className="profile-content" style={{ gap: '0.8rem', padding: '0', alignItems: 'center' }}>
-                    <div className="profile-icon-circle" style={{ width: '60px', height: '60px', background: 'rgba(0,0,0,0.3)' }}>
-                      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M22 14.355c0-.742-.564-1.346-1.26-1.346H10.676c-.696 0-1.26.604-1.26 1.346s.564 1.346 1.26 1.346H20.74c.696 0 1.26-.604 1.26-1.346z" fill="#B3B3B3" />
-                        <path d="M18.83 7.686c-.504-.538-1.321-.538-1.825 0l-5.105 5.441c-.504.538-.504 1.41 0 1.948l.913.974c.504.538 1.321.538 1.825 0l5.105-5.441c.504-.538.504-1.41 0-1.948l-.913-.974z" fill="#FFA116" />
-                        <path d="M5.17 14.814c-.504-.538-1.321-.538-1.825 0l-1.011 1.077c-.504.538-.504 1.41 0 1.948l3.226 3.439c.504.538 1.321.538 1.825 0l1.011-1.077c.504-.538.504-1.41 0-1.948l-3.226-3.439z" fill="#B3B3B3" />
-                        <path d="M12.033 1.157c-.504-.538-1.321-.538-1.825 0L4.103 7.686c-.504.538-.504 1.41 0 1.948l.913.974c.504.538 1.321.538 1.825 0l6.105-6.529c.504-.538.504-1.41 0-1.948l-.913-.974z" fill="#B3B3B3" />
-                      </svg>
+                  <div className="profile-content" style={{ gap: '1.5rem', padding: '0', alignItems: 'center' }}>
+                    <div className="profile-icon-circle" style={{ width: '100px', height: '100px', background: 'white', overflow: 'hidden', padding: '0', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
+                      <Image src="/leetcode.jpeg" alt="LeetCode" width={100} height={100} style={{ objectFit: 'cover', width: '100%', height: '100%' }} />
                     </div>
-                    <div className="profile-link-name" style={{ color: 'white', fontSize: '0.7rem' }}>@monikajakhar</div>
-                    <div className="profile-stats">
-                      <div className="stat-box">
-                        <span className="stat-value" style={{ color: 'white', fontSize: '1rem' }}>250+</span>
-                        <span className="stat-label-tiny" style={{ color: 'rgba(255,255,255,0.6)' }}>Solved</span>
-                      </div>
-                    </div>
+                    <div className="profile-link-name" style={{ color: 'white', fontSize: '1.2rem', fontWeight: '900', letterSpacing: '0.05em' }}>LeetCode</div>
                   </div>
-                  <div className="card-footer" style={{ marginTop: 'auto' }}>
-                    <span className="card-year"></span>
-                    <span className="card-number">01</span>
-                  </div>
-                </div>
+                </a>
               </div>
 
               <div className="folder-bottom">
