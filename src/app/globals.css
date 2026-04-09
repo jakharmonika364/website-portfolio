@@ -2564,3 +2564,179 @@ nav ul li a:hover {
     grid-template-columns: 1fr;
   }
 }
+
+/* --- New Contact Section --- */
+.contact-section-new {
+  padding: 8rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-header-new {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.contact-title-new {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #f8fafc;
+  margin-bottom: 0.5rem;
+}
+
+.contact-subtitle-new {
+  color: #94a3b8;
+  font-size: 1.1rem;
+}
+
+.contact-grid-new {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  width: 100%;
+  max-width: 1000px;
+  align-items: center;
+}
+
+/* Contact Cards */
+.contact-links-new {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-card-new {
+  background: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-card-new:hover {
+  background: #1e293b;
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.contact-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg-blue { background: rgba(96, 165, 250, 0.1); }
+.bg-purple { background: rgba(192, 132, 252, 0.1); }
+.bg-dark { background: rgba(148, 163, 184, 0.1); }
+
+.contact-info h3 {
+  color: #f8fafc;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.contact-info p {
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+/* Right Side Glowing Orb */
+.contact-visual-new {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.glowing-orb-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.glowing-orb {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(56, 189, 248, 0.4), rgba(2, 132, 199, 0.1));
+  box-shadow: 
+    0 0 60px rgba(56, 189, 248, 0.2),
+    inset 0 0 20px rgba(56, 189, 248, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  animation: floatOrb 6s ease-in-out infinite;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+@keyframes floatOrb {
+  0% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-10px) scale(1.02); }
+  100% { transform: translateY(0px) scale(1); }
+}
+
+.orb-dot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #38bdf8;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #38bdf8;
+}
+
+.orb-dot-1 {
+  top: 40px;
+  right: 60px;
+  animation: orbit1 8s linear infinite;
+}
+
+.orb-dot-2 {
+  bottom: 40px;
+  left: 60px;
+  animation: orbit2 12s linear infinite;
+  width: 4px;
+  height: 4px;
+}
+
+@keyframes orbit1 {
+  from { transform: rotate(0deg) translateX(120px) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(120px) rotate(-360deg); }
+}
+
+@keyframes orbit2 {
+  from { transform: rotate(360deg) translateX(130px) rotate(-360deg); }
+  to   { transform: rotate(0deg) translateX(130px) rotate(0deg); }
+}
+
+.visual-caption {
+  font-size: 0.85rem;
+  letter-spacing: 0.25em;
+  color: #fbbf24;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+@media (max-width: 800px) {
+  .contact-grid-new {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}

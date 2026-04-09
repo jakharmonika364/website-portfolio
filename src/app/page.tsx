@@ -17,7 +17,8 @@ import {
   ShieldCheck,
   PieChart,
   LineChart,
-  Activity
+  Activity,
+  Mail
 } from 'lucide-react';
 
 // Project Card Component with Custom Floating Cursor
@@ -586,39 +587,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="contact-section" id="contact">
-        <div className="contact-container container">
-          <div className="contact-left">
-            <div className="contact-decoration">
-              <div className="decor-blob"></div>
-            </div>
-
-            <h2 className="contact-title">Let&apos;s Talk <span className="arrow">→</span></h2>
-            <a href="mailto:monikajakhar@gmail.com" className="contact-email">
-              monikajakhar@gmail.com
-            </a>
-          </div>
-
-          <div className="contact-right">
-            <div className="contact-card">
-              <p className="handwritten drop-message">drop me a message ✨</p>
-
-              <form className="contact-form">
-                <div className="form-group">
-                  <input type="text" placeholder="Your name" className="form-input" />
-                </div>
-                <div className="form-group">
-                  <textarea placeholder="What's on your mind?" className="form-textarea"></textarea>
-                </div>
-
-                <button type="submit" className="submit-btn" onClick={(e) => e.preventDefault()}>
-                  Send Message ✦
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
       <section className="github-section container" id="github">
         <div className="section-header github-header">
           <h2 className="github-title">GITHUB</h2>
@@ -653,6 +621,59 @@ export default function Home() {
 
         <div className="github-card github-activity-card">
           <img src="https://github-readme-activity-graph.vercel.app/graph?username=jakharmonika364&bg_color=0B0B0B&color=06b6d4&line=06b6d4&point=FFFFFF&hide_border=true&title_color=ffffff&axes_color=94a3b8" alt="GitHub Activity Graph" className="github-graph-img" />
+        </div>
+      </section>
+
+      <section className="contact-section-new container" id="contact">
+        <div className="contact-header-new">
+          <h2 className="contact-title-new">Get In <span className="highlight-text">Touch</span></h2>
+          <p className="contact-subtitle-new">Feel free to reach out for collaborations or just a friendly hello</p>
+        </div>
+
+        <div className="contact-grid-new">
+          <div className="contact-links-new">
+            <a href="mailto:jakharmonika364@gmail.com" className="contact-card-new">
+              <div className="contact-icon bg-blue">
+                 <Mail size={24} color="#60a5fa" />
+              </div>
+              <div className="contact-info">
+                <h3>Email</h3>
+                <p>jakharmonika364@gmail.com</p>
+              </div>
+            </a>
+
+            <a href="https://linkedin.com/in/jakharmonika364" target="_blank" rel="noreferrer" className="contact-card-new">
+              <div className="contact-icon bg-purple">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c084fc" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              </div>
+              <div className="contact-info">
+                <h3>LinkedIn</h3>
+                <p>Connect with me</p>
+              </div>
+            </a>
+
+            <a href="https://github.com/jakharmonika364" target="_blank" rel="noreferrer" className="contact-card-new">
+              <div className="contact-icon bg-dark">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              </div>
+              <div className="contact-info">
+                <h3>GitHub</h3>
+                <p>Explore my code</p>
+              </div>
+            </a>
+          </div>
+
+          <div className="contact-visual-new">
+             <div className="glowing-orb-container">
+                <div className="glowing-orb">
+                   <Code2 size={70} className="glow-icon" color="#38bdf8" />
+                </div>
+                {/* Orbital dots for detail */}
+                <div className="orb-dot orb-dot-1"></div>
+                <div className="orb-dot orb-dot-2"></div>
+             </div>
+             <p className="visual-caption">CRAFTING DIGITAL EXPERIENCES</p>
+          </div>
         </div>
       </section>
     </main>
