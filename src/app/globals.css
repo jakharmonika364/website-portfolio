@@ -247,9 +247,9 @@ nav ul li a:hover {
 }
 
 .hero {
-  padding-top: 22vh;
+  padding-top: 15vh;
+  padding-bottom: 4rem;
   position: relative;
-  min-height: 100vh;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -1550,6 +1550,7 @@ nav ul li a:hover {
   gap: 2rem;
   max-width: 1400px;
   margin: 0 auto;
+  align-items: flex-start;
 }
 
 .project-item-card {
