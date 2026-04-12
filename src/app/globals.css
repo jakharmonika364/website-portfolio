@@ -971,11 +971,35 @@ nav ul li a:hover {
 
 .project-card-img {
   position: relative;
-  height: 180px;
+  height: 220px;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
+  justify-content: center;
   padding: 1.2rem;
   overflow: hidden;
+}
+
+.project-hero-icon {
+  color: rgba(255, 255, 255, 0.4);
+  filter: drop-shadow(0 0 15px rgba(6, 182, 212, 0.3));
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.project-hero-icon-light {
+  color: #ffffff;
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.4));
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.project-card:hover .project-hero-icon {
+  transform: scale(1.2) rotate(5deg);
+  color: rgba(255, 255, 255, 0.9);
+  filter: drop-shadow(0 0 25px rgba(6, 182, 212, 0.6));
+}
+
+.project-card:hover .project-hero-icon-light {
+  transform: scale(1.1) rotate(-5deg);
+  filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.6));
 }
 
 .project-live-badge {
@@ -2102,17 +2126,45 @@ nav ul li a:hover {
   top: -10px;
 }
 
+.tech-polaroid-icon {
+  filter: drop-shadow(0 0 12px rgba(6, 182, 212, 0.5));
+}
+
+.tech-polaroid-label {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-top: 0.5rem;
+}
+
 .main-frame {
-  background: white;
-  padding: 1.2rem;
-  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.1);
+  background: #0f172a;
+  padding: 3rem 2rem;
+  border: 1px solid rgba(6, 182, 212, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.main-frame .tech-polaroid-label {
+  font-size: 0.9rem;
 }
 
 .polaroid-about {
-  background: var(--surface);
-  padding: 0.8rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(6, 182, 212, 0.08);
+  background: #0f172a;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(6, 182, 212, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 180px;
 }
 
 .about-img {

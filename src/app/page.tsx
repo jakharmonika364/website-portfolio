@@ -18,7 +18,13 @@ import {
   PieChart,
   LineChart,
   Activity,
-  Mail
+  Mail,
+  Music,
+  Leaf,
+  GraduationCap,
+  Headphones,
+  Disc,
+  ClipboardCheck
 } from 'lucide-react';
 
 // Project Card Component with Custom Floating Cursor
@@ -295,11 +301,7 @@ export default function Home() {
           <div className="project-card">
             <div className="project-card-img" style={{ background: 'linear-gradient(135deg, #3b1f6e, #1e3a8a)' }}>
               <span className="project-live-badge">● Live</span>
-              <div className="project-img-mockup audio-mockup">
-                <div className="mock-bar" style={{ width: '40%', background: 'rgba(167,139,250,0.7)' }}></div>
-                <div className="mock-bar" style={{ width: '70%', background: 'rgba(139,92,246,0.5)' }}></div>
-                <div className="mock-bar" style={{ width: '55%', background: 'rgba(109,40,217,0.5)' }}></div>
-              </div>
+              <Music size={70} className="project-hero-icon" />
             </div>
             <div className="project-card-body">
               <h3 className="project-card-title">
@@ -322,14 +324,7 @@ export default function Home() {
           <div className="project-card">
             <div className="project-card-img" style={{ background: 'linear-gradient(135deg, #064e3b, #065f46)' }}>
               <span className="project-live-badge">● Live</span>
-              <div className="project-img-mockup chart-mockup">
-                <div className="mock-chart-bar" style={{ height: '60%' }}></div>
-                <div className="mock-chart-bar" style={{ height: '85%' }}></div>
-                <div className="mock-chart-bar" style={{ height: '45%' }}></div>
-                <div className="mock-chart-bar" style={{ height: '70%' }}></div>
-                <div className="mock-chart-bar" style={{ height: '90%' }}></div>
-                <div className="mock-chart-bar" style={{ height: '55%' }}></div>
-              </div>
+              <Leaf size={70} className="project-hero-icon" />
             </div>
             <div className="project-card-body">
               <h3 className="project-card-title">
@@ -352,11 +347,7 @@ export default function Home() {
           <div className="project-card">
             <div className="project-card-img" style={{ background: 'linear-gradient(135deg, #1e3a5f, #1e40af)' }}>
               <span className="project-live-badge">● Live</span>
-              <div className="project-img-mockup table-mockup">
-                <div className="mock-table-row"><div className="mock-cell wide"></div><div className="mock-cell green"></div></div>
-                <div className="mock-table-row"><div className="mock-cell wide"></div><div className="mock-cell green"></div></div>
-                <div className="mock-table-row"><div className="mock-cell wide"></div><div className="mock-cell green"></div></div>
-              </div>
+              <GraduationCap size={70} className="project-hero-icon" />
             </div>
             <div className="project-card-body">
               <h3 className="project-card-title">
@@ -378,8 +369,8 @@ export default function Home() {
           {/* Soniq Music Player */}
           <div className="project-card project-card-wide" style={{ background: 'linear-gradient(135deg, #7c3aed, #ec4899, #f97316)' }}>
             <div className="project-card-body project-card-body-overlay">
-              <div className="music-player-icon">〜</div>
-              <h3 className="project-card-title-light">Soniq Music Player</h3>
+              <Disc size={60} className="project-hero-icon-light" />
+              <h3 className="project-card-title-light" style={{ marginTop: '1.5rem' }}>Soniq Music Player</h3>
               <p className="project-card-desc-light">Music Player</p>
               <div className="music-progress-bar"><div className="music-progress-fill"></div></div>
               <div className="project-links" style={{ marginTop: '1.5rem' }}>
@@ -539,52 +530,53 @@ export default function Home() {
             <div className="scatter-photo scatter-1">
               <div className="push-pin tiny"></div>
               <div className="polaroid-about">
-                <Image src="/sketch1.png" alt="Sketch 1" width={180} height={180} />
+                <BarChart3 size={48} className="tech-polaroid-icon" color="#38bdf8" />
+                <span className="tech-polaroid-label">Data Analysis</span>
               </div>
             </div>
             <div className="scatter-photo scatter-2">
               <div className="push-pin tiny"></div>
               <div className="polaroid-about">
-                <Image src="/sketch2.png" alt="Sketch 2" width={180} height={180} />
+                <Code2 size={48} className="tech-polaroid-icon" color="#6366f1" />
+                <span className="tech-polaroid-label">Full Stack</span>
               </div>
             </div>
             <div className="scatter-photo scatter-3">
               <div className="push-pin tiny"></div>
               <div className="polaroid-about">
-                <Image src="/painting1.png" alt="Painting 1" width={180} height={180} />
+                <Globe size={48} className="tech-polaroid-icon" color="#10b981" />
+                <span className="tech-polaroid-label">Open Source</span>
               </div>
             </div>
             <div className="scatter-photo scatter-4">
               <div className="push-pin tiny"></div>
               <div className="polaroid-about">
-                <Image src="/sketch3.png" alt="Sketch 3" width={180} height={180} />
+                <ShieldCheck size={48} className="tech-polaroid-icon" color="#f59e0b" />
+                <span className="tech-polaroid-label">Cloud Native</span>
               </div>
             </div>
             <div className="scatter-photo scatter-5">
               <div className="push-pin tiny"></div>
               <div className="polaroid-about">
-                <Image src="/sketch4.png" alt="Sketch 4" width={180} height={180} />
+                <Terminal size={48} className="tech-polaroid-icon" color="#ec4899" />
+                <span className="tech-polaroid-label">Performance</span>
               </div>
             </div>
             <div className="scatter-photo scatter-6">
               <div className="push-pin tiny"></div>
               <div className="polaroid-about">
-                <Image src="/painting2.png" alt="Painting 2" width={180} height={180} />
+                <Server size={48} className="tech-polaroid-icon" color="#a855f7" />
+                <span className="tech-polaroid-label">Architecture</span>
               </div>
             </div>
 
             <div className="pinned-main">
               <div className="push-pin"></div>
               <div className="polaroid-about main-frame">
-                <Image
-                  src="/workspace.png"
-                  alt="Workspace"
-                  className="about-img"
-                  width={400}
-                  height={300}
-                />
+                <Database size={80} className="tech-polaroid-icon" color="#38bdf8" />
+                <span className="tech-polaroid-label" style={{ fontSize: '1.2rem' }}>Systems & Logic</span>
               </div>
-              <p className="handwritten about-caption">just me and colors again 🎨</p>
+              <p className="handwritten about-caption">building meaningful digital experiences 🚀</p>
             </div>
           </div>
         </div>
