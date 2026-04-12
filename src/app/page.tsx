@@ -510,23 +510,26 @@ export default function Home() {
               <h2 className="notebook-title">Namaste! I&apos;m Monika ✦</h2>
               <div className="notebook-text">
                 <p>
-                  I&apos;m a <strong>Communication Designer</strong> and User Experience graduate student
-                  at <strong>Arizona State University</strong>. I love exploring how design can tell
-                  stories, spark emotion, and make everyday moments a little more meaningful.
+                  Namaste! I&apos;m <strong>Monika Jakhar</strong>. I&apos;m a <strong>Data Analyst</strong> and 
+                  <strong> Full-Stack Developer</strong> with a deep passion for <strong>Open Source</strong> 
+                  and <strong>Clean Architecture</strong>.
                 </p>
                 <p>
-                  With a background in visual communication and user experience, I&apos;ve
-                  worked on <strong>brand identities, social media campaigns, and digital
-                    experiences</strong> for a variety of projects.
+                  Based in India 🇮🇳, I actively contribute to significant cloud-native projects and 
+                  high-performance engines. My journey involves everything from deep-diving into 
+                  <strong> Kubernetes</strong> and <strong>Cloud Native</strong> ecosystems to 
+                  working on <strong>Rust</strong>-based engines and <strong>Kotlin</strong> mobile apps.
                 </p>
                 <p>
-                  My journey started with a love for <strong>painting and sketching</strong>, and that
-                  curiosity still drives how I approach design today — with creativity,
-                  empathy, and a genuine interest in people and their experiences.
+                  I&apos;ve contributed to <strong>CNCF</strong> projects like <strong>Fluid</strong> and 
+                  <strong> Kyverno</strong>, helping bridge the gap between cloud storage and compute. 
+                  I believe in writing code that is not just functional, but elegantly architected 
+                  for speed and scalability.
                 </p>
                 <p>
-                  Currently open to <strong>internships & Co-op</strong>. If you&apos;re building something
-                  with heart, let&apos;s talk!
+                  Currently open to <strong>Freelance, Internships & Co-op</strong>. If you&apos;re 
+                  building something high-performance or need a data-driven perspective, 
+                  let&apos;s talk!
                 </p>
               </div>
             </div>
